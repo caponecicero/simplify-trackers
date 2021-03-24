@@ -59,9 +59,9 @@ BEGIN { stop = 0; incomment = 0 }
                                 #       into "blah blah blah" ... '// comment' is not
                                 #       legal in ruby
                                 
-            gsub(/a-zA-Z0-9-/, "a-zA-Z0-9\\\\-") #  escape 'naked' dash -- legal in JS
-                                                 #      but generates compile warnings
-                                                 #      in ruby
+            gsub(/a-zA-Z0-9-/, "a-zA-Z0-9\\\\\\\\-") #  ugh! escape 'naked' dash -- legal in JS
+                                                     #      but generates compile warnings
+                                                     #      in ruby
 
             sub(/\:/, " =>") #   change ':' to the ruby hash operator ' =>'
 
